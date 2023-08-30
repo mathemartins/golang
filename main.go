@@ -121,7 +121,37 @@ func alternateCombineList(firstArray []interface{}, secondArray []interface{}) [
 	return combinedArray
 }
 
+// Question 01
+// implement a function that counts the number of set bits in a
+// binary representation of a 32 bit integer
+// func countBits(num uint32) int32 {
+// }
+
+func countBits(num uint32) int32 {
+	count := int32(0)
+	for num > 0 {
+		// use a bitwise AND operator to check if the least significant value is even or odd 0 or 1
+		if num&1 == 1 {
+			count++
+		}
+		// shift the bit numbers one to the right each loop to check each time
+		num >>= 1
+	}
+	return 0
+}
+
+// Question 02
+// Complete the 'ModifyString' function below and add imports if needed.
+// The function is expected to return a STRING.
+// The function accepts STRING str as parameter.
+// func ModifyString(str string) string {
+//     trim all spaces at the end of the string
+//     remove all the digits from 0 to 9
+//     reverse the string
+// }
+
 func main() {
+	print(countBits(98))
 	//numbers := []string{"2", "4", "7", "9", "12", "15", "18"}
 	//fruits := []string{"Apple", "Mango", "Pawpaw", "Orange", "Pineapple"}
 	//fmt.Println(alternateCombineList(numbers, fruits []interface{}))
